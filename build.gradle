@@ -1,19 +1,35 @@
-plugins {
-    id 'java'
+configure(subprojects) {
+    apply plugin: 'java'
+
+    group 'springbook'
+    version '1.0-SNAPSHOT'
+
+    sourceSets {
+        main {
+            java {
+                srcDir 'src/main/java'
+            }
+            resources {
+                srcDir 'src/main/resources'
+            }
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+        testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+        compile 'mysql:mysql-connector-java:5.1.13'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
 }
 
-group 'springbook'
-version '1.0-SNAPSHOT'
+project(":Chapter1-1") {
 
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-}
-
-test {
-    useJUnitPlatform()
 }
