@@ -31,5 +31,7 @@ configure(subprojects) {
 }
 
 project(":Chapter1-1") {
+}
 
+project(":Chapter1-2") {
 }

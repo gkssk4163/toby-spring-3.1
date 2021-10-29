@@ -1,3 +1,4 @@
 rootProject.name = 'toby-spring-3.1'
 include 'Chapter1-1'
+include 'Chapter1-2'
 
